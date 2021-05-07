@@ -29,10 +29,14 @@ function vanE(miben, ki) {
     if (miben[i] === ki) { benne_van = true; return i; }
   }
   return -1;
-
 }
-let van = vanE(names, 'Attila');
-console.log(van);
+let nev = 'Attila';
+let van = vanE(names, nev);
+if (van > 0) {
+  console.log(nev + ' benne van a tömbben a(z) ' + (van + 1) + ' .helyen!');
+} else {
+  console.log(nev + 'nincs a tömbben');
+}
 
 
 // 1. feladat
@@ -51,51 +55,49 @@ van = vanE_2(names, 'Andrea');
 
 // 2. feladat
 
-// function sum(tomb) {
-//   let result = 0;
-//   for (let i = 0; i < tomb.length; i++) {
-//     result += tomb[i];
-//   }
-//   return result;
-// }
+function sum(tomb) {
+  let result = 0;
+  for (let i = 0; i < tomb.length; i++) {
+    result += tomb[i];
+  }
+  return result;
+}
 
-// const nums = [4, 2, 2, 1, 1];
-// let sum_var;
-// console.log('Az eredmény: ' + (sum_var = sum(nums)));
+const nums = [4, 2, 2, 1, 1];
+let sum_var;
+console.log('Az eredmény: ' + (sum_var = sum(nums)));
 
 
 // 3. feladat
 
-// function sum(tomb) {
-//   let result = 0;
-//   for (let i = 0; i < tomb.length; i++) {
-//     if (typeof (tomb[i]) !== 'number') {
-//       console.log('Az alábbi elem: ' + '-' + tomb[i] + '-' + ' nem szám!');
-//     } else {
-//       result += tomb[i];
-//     }
-//   }
-//   return result;
-// }
+function sum(tomb) {
+  let result = 0;
+  for (let i = 0; i < tomb.length; i++) {
+    if (typeof (tomb[i]) !== 'number') {
+      console.log('Az alábbi elem: ' + '-' + tomb[i] + '-' + ' nem szám!');
+    } else {
+      result += tomb[i];
+    }
+  }
+  return result;
+}
 
-// const nums_2 = ['a', true, '2', '2', '1', 1];
-// let sum_var_2;
-// console.log('Az eredmény: ' + (sum_var_2 = sum(nums_2)));
+const nums_2 = ['a', true, '2', '2', '1', 1];
+let sum_var_2;
+console.log('Az eredmény: ' + (sum_var_2 = sum(nums_2)));
 
 // 4.feladat
 
-// function sum_advance(tomb) {
-//   let result = 0;
-//   for (let i = 0; i < tomb.length; i++) {
-//     if (typeof (tomb[i]) !== 'number') {
-//       if (isNaN(parseInt(tomb[i]))) {
-//         console.log('Az alábbi elem: ' + '[' + tomb[i] + ']' + ' nem szám!');
-//         continue;
-//       }
-//     }
-//     result += parseInt(tomb[i]);
-//   }
-//   return result;
+function sum_advance(tomb) {
+  let result = 0;
+  for (let i = 0; i < tomb.length; i++) {
+    if ((typeof (tomb[i]) !== 'number') && (isNaN(parseInt(tomb[i])))) {
+      console.log('Az alábbi elem: ' + '[' + tomb[i] + ']' + ' nem szám!');
+      continue;
+    }
+    result += parseInt(tomb[i]);
+  }
+  return result;
 
-// }
-// console.log('Az eredmény: ' + (sum_var_2 = sum_advance(nums_2)));
+}
+console.log('Az eredmény: ' + (sum_var_2 = sum_advance(nums_2)));
